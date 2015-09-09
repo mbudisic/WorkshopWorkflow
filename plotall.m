@@ -3,7 +3,7 @@ function plotall( data )
 %
 % PLOTALL(data) plot x-coordinate from the cell-array data.Trajectories
 %
-% See also generate, run
+% See also generate, run, onescript
 
 assert( all( isfield( data, {'Trajectories'} ) ), 'Not a valid input' );
 
