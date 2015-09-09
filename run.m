@@ -4,10 +4,13 @@ function run(name)
 % RUN(name) If name.mat exists, load the data and visualize them.
 % Otherwise, generate a data set, store it as name.mat and visualize it.
 %
-% See also: generate, plotall
+% See also: generate, plotall, onescript
 %
 
 % Test that the input is a nonempty string.
+if nargin < 1
+    error('You have to provide a name for the test run')
+end
 validateattributes(name,{'char'},{'vector','nonempty'});
 
 % Form the appropriate extension.
@@ -20,7 +23,7 @@ if ~exist(matfile, 'file')
     disp(['Saved: ' data.README]);
 else
     data = load(matfile); % Load data from this run.
-    disp(['Loaded: ' data.README]); 
+    disp(['Loaded: ' data.README]);
 end
 
 % Visualize data.

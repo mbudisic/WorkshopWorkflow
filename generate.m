@@ -3,9 +3,14 @@ function data = generate(N)
 %
 % generate(N) generate N trajectories of a linear ODE.
 %
+%
+% See also plotall, run, onescript
 
 %%
 % Check that inputs are valid.
+if nargin < 1
+    error('You have to provide number of trajectories')
+end
 validateattributes(N, {'numeric'},{'integer','positive','finite'});
 
 %%
